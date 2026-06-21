@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://p5lfc1yvnb37"]
+
+[ext_resource type="Script" uid="uid://ci1ienyyw8g67" path="res://main_menu.gd" id="1_06t4h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhts7"]
+bg_color = Color(0.4874723, 0.6582134, 0.39719993, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06t4h"]
+bg_color = Color(0.547081, 0.6520164, 0.1259022, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
+bg_color = Color(0.32544482, 0.3876097, 0.06704783, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fu7sn"]
+bg_color = Color(0.33837298, 0.4042103, 0.06974178, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="MainMenu" type="Control" unique_id=1151769636]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_06t4h")
+
+[node name="Menupanel" type="Panel" parent="." unique_id=327539841]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2240.0
+offset_top = -1168.0
+offset_right = 2279.0
+offset_bottom = 1489.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rhts7")
+
+[node name="Titlelabel" type="Label" parent="." unique_id=1408258737]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 180.0
+offset_right = 960.0
+offset_bottom = 356.0
+theme_override_font_sizes/font_size = 120
+text = "Kleine Schlange"
+
+[node name="Creditlabel" type="Label" parent="." unique_id=2130644891]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 856.0
+offset_right = 971.0
+offset_bottom = 911.0
+theme_override_font_sizes/font_size = 40
+text = "Created by: (jan Marcelo) Goedheiligman Mymy"
+
+[node name="Startbutton" type="Button" parent="." unique_id=1434863752]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 500.0
+offset_right = 757.0
+offset_bottom = 689.0
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_06t4h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_06t4h")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_fu7sn")
+text = "Start"
+
+[connection signal="start" from="." to="." method="_on_start"]
+[connection signal="pressed" from="Startbutton" to="." method="_on_startbutton_pressed"]
