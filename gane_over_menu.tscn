@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://c3wyh3yp1cbc8"]
+
+[ext_resource type="Script" uid="uid://dvpgjt1wx86yj" path="res://gane_over_menu.gd" id="1_gvlsf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c1g1a"]
+bg_color = Color(0.72745407, 0.5823362, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 5
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 5
+shadow_size = 2
+shadow_offset = Vector2(10, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvlsf"]
+bg_color = Color(1, 0, 0.23921569, 1)
+shadow_size = 3
+shadow_offset = Vector2(3, 3)
+
+[node name="GameOverMenu" type="CanvasLayer" unique_id=1885715828]
+script = ExtResource("1_gvlsf")
+
+[node name="GameOverPanel" type="Panel" parent="." unique_id=1393145462]
+offset_left = 456.0
+offset_top = 232.0
+offset_right = 856.0
+offset_bottom = 482.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_c1g1a")
+
+[node name="ResultLabel" type="Label" parent="." unique_id=605278687]
+offset_left = 466.0
+offset_top = 287.0
+offset_right = 847.0
+offset_bottom = 361.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 47
+text = "The game is over"
+
+[node name="RestartButton" type="Button" parent="." unique_id=928829565]
+offset_left = 593.0
+offset_top = 387.0
+offset_right = 711.0
+offset_bottom = 437.0
+theme_override_colors/font_color = Color(0.9999997, 0.8683394, 0.48621887, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_gvlsf")
+text = "Or is it?"
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
