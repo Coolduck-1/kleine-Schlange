@@ -172,7 +172,7 @@ func check_food_eaten():
 		score += 1
 		$hud.get_node("Scorelabel").text = "Score: " + str(score)
 		
-		if score >= 3:
+		if score >= 100:
 			win_game()
 			return
 			
